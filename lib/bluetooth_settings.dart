@@ -32,10 +32,6 @@ class _BluetoothAppState extends State<BluetoothApp> {
             );
           },
         ),
-        trailing: Text(
-          'Edit',
-          style: TextStyle(fontSize: 20, color: CupertinoColors.systemBlue),
-        ),
       ),
 
       child: SingleChildScrollView(
