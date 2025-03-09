@@ -287,6 +287,135 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
 
+                SizedBox(height: 15),
+
+                Container(
+                  padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+                  decoration: BoxDecoration(
+                    color: CupertinoColors.systemGrey.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.3),
+                        blurRadius: 5,
+                        offset: Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          ClipOval(
+                            child: Image.asset(
+                              'images/jcimage.jpg',
+                              height: 80,
+                              width: 80,
+                            ),
+                          ),
+
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(7, 15, 0, 0),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'John Carlo Dizon',
+                                            style: TextStyle(
+                                              fontSize: 23,
+                                              fontWeight: FontWeight.w500,
+                                              color: CupertinoColors.white,
+                                            ),
+                                          ),
+                                          Text(
+                                            'Apple Account, iCloud, and more',
+                                            style: TextStyle(
+                                              fontSize: 15,
+                                              color:
+                                                  CupertinoColors.inactiveGray,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Icon(
+                                        CupertinoIcons.chevron_right,
+                                        color: CupertinoColors.inactiveGray,
+                                        size: 18,
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 15),
+                                  Divider(),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      SizedBox(height: 15),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Your iPhone can't be backed up",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 18,
+                              color: CupertinoColors.white,
+                            ),
+                          ),
+
+                          Row(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  shape: BoxShape.circle,
+                                ),
+                                constraints: BoxConstraints(
+                                  minWidth: 30,
+                                  minHeight: 30,
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    '1',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                ),
+                              ),
+
+                              SizedBox(width: 5),
+                              Icon(
+                                CupertinoIcons.chevron_right,
+                                color: CupertinoColors.inactiveGray,
+                                size: 18,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+
+                SizedBox(height: 30),
+
                 //END CONTAINER --------------------------------
               ],
             ),
