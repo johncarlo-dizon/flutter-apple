@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:iphone/bluetooth_settings.dart';
 import 'package:iphone/wifi_settings.dart';
 import 'variables.dart';
+import 'package:iphone/battery.dart';
 
 void main() {
   runApp(
@@ -993,7 +994,14 @@ class _MyAppState extends State<MyApp> {
                             ),
                           ],
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            CupertinoPageRoute(
+                              builder: (context) => BatteryApp(),
+                            ),
+                          );
+                        },
                       ),
 
                       // BUTTON END

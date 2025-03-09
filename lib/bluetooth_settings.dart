@@ -420,6 +420,47 @@ class _BluetoothAppState extends State<BluetoothApp> {
                     )
                     : SizedBox.shrink(),
 
+                blueLoading
+                    ? Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(25, 20, 25, 10),
+                          child: Row(
+                            children: [
+                              Text(
+                                "OTHER DEVICES",
+                                style: TextStyle(fontSize: 14),
+                              ),
+                              SizedBox(width: 10),
+                              CupertinoActivityIndicator(),
+                            ],
+                          ),
+                        ),
+                      ],
+                    )
+                    : SizedBox.shrink(),
+
+                blueLoading
+                    ? Padding(
+                      padding: const EdgeInsets.fromLTRB(25, 0, 25, 10),
+                      child: Text.rich(
+                        TextSpan(
+                          text:
+                              "To pair an Apple Watch with your iPhone, go to the ",
+                          style: TextStyle(fontSize: 14),
+                          children: <TextSpan>[
+                            TextSpan(
+                              text: "Apple Watch App",
+                              style: TextStyle(
+                                color: Colors.blue,
+                                fontSize: 14,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
+                    : SizedBox.shrink(),
                 // CONTENT END ------------------------------------------
               ],
             ),
