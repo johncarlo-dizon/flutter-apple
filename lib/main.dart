@@ -258,21 +258,36 @@ class _MyAppState extends State<MyApp> {
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-            child: Column(children: [
+            child: Column(
+              children: [
+                // START CONTAINER ----------------------
+                CupertinoTextField(
+                  padding: EdgeInsets.all(10),
+                  suffix: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Icon(
+                      CupertinoIcons.mic_fill,
+                      color: CupertinoColors.white,
+                      size: 18,
+                    ),
+                  ),
+                  prefix: Padding(
+                    padding: const EdgeInsets.fromLTRB(8, 0, 0, 0),
+                    child: Icon(
+                      CupertinoIcons.search,
+                      color: CupertinoColors.white,
+                      size: 18,
+                    ),
+                  ),
+                  placeholder: "Search",
+                  placeholderStyle: TextStyle(color: CupertinoColors.white),
+                  decoration: BoxDecoration(
+                    color: CupertinoColors.systemGrey.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
 
-
-
-
-
-
-                
-
-                 
-
-
-
-
-
+                //END CONTAINER --------------------------------
               ],
             ),
           ),
