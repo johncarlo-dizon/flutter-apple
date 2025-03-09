@@ -1001,6 +1001,8 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
 
+                SizedBox(height: 50),
+
                 //END CONTAINER --------------------------------
               ],
             ),
