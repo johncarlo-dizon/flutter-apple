@@ -416,6 +416,69 @@ class _MyAppState extends State<MyApp> {
 
                 SizedBox(height: 30),
 
+                Container(
+                  padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
+                  decoration: BoxDecoration(
+                    color: CupertinoColors.systemGrey.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.3),
+                        blurRadius: 5,
+                        offset: Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Software Update Available',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 18,
+                          color: CupertinoColors.white,
+                        ),
+                      ),
+
+                      Row(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Colors.red,
+                              shape: BoxShape.circle,
+                            ),
+                            constraints: BoxConstraints(
+                              minWidth: 30,
+                              minHeight: 30,
+                            ),
+                            child: Center(
+                              child: Text(
+                                '1',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ),
+
+                          SizedBox(width: 5),
+
+                          Icon(
+                            CupertinoIcons.chevron_right,
+                            color: CupertinoColors.inactiveGray,
+                            size: 18,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+
+                SizedBox(height: 30),
+
                 //END CONTAINER --------------------------------
               ],
             ),
