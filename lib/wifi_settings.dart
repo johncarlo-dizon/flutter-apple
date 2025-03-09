@@ -392,6 +392,242 @@ class _WifiAppState extends State<WifiApp> {
                     )
                     : SizedBox.shrink(),
 
+                wifiStatus && wifiLoading != true
+                    ? Container(
+                      width: double.maxFinite,
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        color: CupertinoColors.systemGrey.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.3),
+                            blurRadius: 5,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                  20,
+                                  10,
+                                  10,
+                                  10,
+                                ),
+                                child: Text(
+                                  "#Giga Smart Wifi",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                  10,
+                                  10,
+                                  10,
+                                  10,
+                                ),
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      CupertinoIcons.wifi,
+                                      color: CupertinoColors.white,
+                                    ),
+                                    SizedBox(width: 5),
+                                    Icon(CupertinoIcons.exclamationmark_circle),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                            child: Divider(),
+                          ),
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                  20,
+                                  10,
+                                  10,
+                                  10,
+                                ),
+                                child: Text(
+                                  "Other...",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                  10,
+                                  10,
+                                  10,
+                                  10,
+                                ),
+                                child: Row(children: [
+
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    )
+                    : SizedBox.shrink(),
+
+                // MY NETWORKS END
+                wifiStatus ? SizedBox(height: 40) : SizedBox.shrink(),
+
+                wifiStatus
+                    ? Container(
+                      width: double.maxFinite,
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        color: CupertinoColors.systemGrey.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.3),
+                            blurRadius: 5,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                  20,
+                                  10,
+                                  10,
+                                  10,
+                                ),
+                                child: Text(
+                                  "Ask to Join Networks",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                  10,
+                                  10,
+                                  10,
+                                  10,
+                                ),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      'Notify',
+                                      style: TextStyle(
+                                        color: CupertinoColors.systemGrey,
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                    SizedBox(width: 5),
+                                    Icon(
+                                      CupertinoIcons.chevron_right,
+                                      color: CupertinoColors.systemGrey,
+                                      size: 18,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    )
+                    : SizedBox.shrink(),
+
+                wifiLoading ? SizedBox(height: 40) : SizedBox.shrink(),
+
+                wifiLoading
+                    ? Container(
+                      width: double.maxFinite,
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        color: CupertinoColors.systemGrey.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.3),
+                            blurRadius: 5,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                  20,
+                                  10,
+                                  10,
+                                  10,
+                                ),
+                                child: Text(
+                                  "Auto Join Hotspot",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                  10,
+                                  10,
+                                  10,
+                                  10,
+                                ),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      'Ask to Join',
+                                      style: TextStyle(
+                                        color: CupertinoColors.systemGrey,
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                    SizedBox(width: 5),
+                                    Icon(
+                                      CupertinoIcons.chevron_right,
+                                      color: CupertinoColors.systemGrey,
+                                      size: 18,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    )
+                    : SizedBox.shrink(),
+
                 // CONTAINER -------------- END
               ],
             ),
