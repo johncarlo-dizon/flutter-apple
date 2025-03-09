@@ -270,6 +270,156 @@ class _BluetoothAppState extends State<BluetoothApp> {
                     )
                     : SizedBox.shrink(),
 
+                blueStatus
+                    ? Container(
+                      width: double.maxFinite,
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        color: CupertinoColors.systemGrey.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.3),
+                            blurRadius: 5,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                  20,
+                                  10,
+                                  10,
+                                  10,
+                                ),
+                                child: Text(
+                                  "BEATS PROBO",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                  10,
+                                  10,
+                                  10,
+                                  10,
+                                ),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      'Not Connected',
+                                      style: TextStyle(fontSize: 18),
+                                    ),
+                                    SizedBox(width: 5),
+                                    Icon(CupertinoIcons.exclamationmark_circle),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                            child: Divider(),
+                          ),
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                  20,
+                                  10,
+                                  10,
+                                  10,
+                                ),
+                                child: Text(
+                                  "AirPods",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                  10,
+                                  10,
+                                  10,
+                                  10,
+                                ),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      'Not Connected',
+                                      style: TextStyle(fontSize: 18),
+                                    ),
+                                    SizedBox(width: 5),
+                                    Icon(CupertinoIcons.exclamationmark_circle),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                            child: Divider(),
+                          ),
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                  20,
+                                  10,
+                                  10,
+                                  10,
+                                ),
+                                child: Text(
+                                  "inkax-T02",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                  10,
+                                  10,
+                                  10,
+                                  10,
+                                ),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      'Not Connected',
+                                      style: TextStyle(fontSize: 18),
+                                    ),
+                                    SizedBox(width: 5),
+                                    Icon(CupertinoIcons.exclamationmark_circle),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                            child: Divider(),
+                          ),
+                        ],
+                      ),
+                    )
+                    : SizedBox.shrink(),
+
                 // CONTENT END ------------------------------------------
               ],
             ),
