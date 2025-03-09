@@ -479,6 +479,528 @@ class _MyAppState extends State<MyApp> {
 
                 SizedBox(height: 30),
 
+                Container(
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: CupertinoColors.systemGrey.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(10), // rounded corners
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.3),
+                        blurRadius: 5,
+                        offset: Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      CupertinoButton(
+                        padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                        child: Row(
+                          children: [
+                            Column(
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black45,
+                                    borderRadius: BorderRadius.circular(12),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: CupertinoColors.systemGrey
+                                            .withOpacity(0.2),
+                                        blurRadius: 2,
+                                        offset: Offset(0, 1),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Icon(
+                                    CupertinoIcons.airplane,
+                                    size: 20,
+                                    color: CupertinoColors.white,
+                                  ),
+                                ),
+                                SizedBox(height: 20),
+                              ],
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                            ),
+
+                            SizedBox(width: 15),
+
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'Airplane Mode',
+                                        style: TextStyle(
+                                          color: CupertinoColors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                      Row(
+                                        children: [
+                                          CupertinoSwitch(
+                                            value: flightStatus,
+                                            onChanged: (bool value) {
+                                              setState(() {
+                                                flightStatus = value;
+                                              });
+                                            },
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  Divider(),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        onPressed: () {},
+                      ),
+
+                      // BUTTON End
+                      // BUTTON Start
+                      CupertinoButton(
+                        padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                        child: Row(
+                          children: [
+                            Column(
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black45,
+                                    borderRadius: BorderRadius.circular(12),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: CupertinoColors.systemGrey
+                                            .withOpacity(0.2),
+                                        blurRadius: 2,
+                                        offset: Offset(0, 1),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Icon(
+                                    CupertinoIcons.wifi,
+                                    size: 20,
+                                    color: CupertinoColors.white,
+                                  ),
+                                ),
+                                SizedBox(height: 20),
+                              ],
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                            ),
+
+                            SizedBox(width: 15),
+
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'Wi-Fi',
+                                        style: TextStyle(
+                                          color: CupertinoColors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            wifiStatus
+                                                ? 'Not Connected'
+                                                : 'Off',
+                                            style: TextStyle(
+                                              color:
+                                                  CupertinoColors.inactiveGray,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 18,
+                                            ),
+                                          ),
+                                          SizedBox(width: 5),
+
+                                          Icon(
+                                            CupertinoIcons.chevron_right,
+                                            color: CupertinoColors.inactiveGray,
+                                            size: 18,
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 10),
+                                  Divider(),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            CupertinoPageRoute(builder: (context) => WifiApp()),
+                          );
+                        },
+                      ),
+
+                      // BUTTON END
+
+                      // BUTTON Start
+                      CupertinoButton(
+                        padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                        child: Row(
+                          children: [
+                            Column(
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black45,
+                                    borderRadius: BorderRadius.circular(12),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: CupertinoColors.systemGrey
+                                            .withOpacity(0.2),
+                                        blurRadius: 2,
+                                        offset: Offset(0, 1),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Icon(
+                                    CupertinoIcons.bluetooth,
+                                    size: 20,
+                                    color: CupertinoColors.white,
+                                  ),
+                                ),
+                                SizedBox(height: 20),
+                              ],
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                            ),
+
+                            SizedBox(width: 15),
+
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'Bluetooth',
+                                        style: TextStyle(
+                                          color: CupertinoColors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            blueStatus ? 'On' : 'Off',
+                                            style: TextStyle(
+                                              color:
+                                                  CupertinoColors.inactiveGray,
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 18,
+                                            ),
+                                          ),
+                                          SizedBox(width: 5),
+
+                                          Icon(
+                                            CupertinoIcons.chevron_right,
+                                            color: CupertinoColors.inactiveGray,
+                                            size: 18,
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 10),
+                                  Divider(),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            CupertinoPageRoute(
+                              builder: (context) => BluetoothApp(),
+                            ),
+                          );
+                        },
+                      ),
+
+                      // BUTTON END
+
+                      // BUTTON Start
+                      CupertinoButton(
+                        padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                        child: Row(
+                          children: [
+                            Column(
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black45,
+                                    borderRadius: BorderRadius.circular(12),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: CupertinoColors.systemGrey
+                                            .withOpacity(0.2),
+                                        blurRadius: 2,
+                                        offset: Offset(0, 1),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Icon(
+                                    CupertinoIcons
+                                        .antenna_radiowaves_left_right,
+                                    size: 20,
+                                    color: CupertinoColors.white,
+                                  ),
+                                ),
+                                SizedBox(height: 20),
+                              ],
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                            ),
+
+                            SizedBox(width: 15),
+
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'Cellular',
+                                        style: TextStyle(
+                                          color: CupertinoColors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            'Off',
+                                            style: TextStyle(
+                                              color:
+                                                  CupertinoColors.inactiveGray,
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 18,
+                                            ),
+                                          ),
+                                          SizedBox(width: 5),
+
+                                          Icon(
+                                            CupertinoIcons.chevron_right,
+                                            color: CupertinoColors.inactiveGray,
+                                            size: 18,
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 10),
+                                  Divider(),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        onPressed: () {},
+                      ),
+
+                      // BUTTON END
+
+                      // BUTTON Start
+                      CupertinoButton(
+                        onPressed: null,
+                        padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                        child: Row(
+                          children: [
+                            Column(
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black45.withOpacity(0.5),
+                                    borderRadius: BorderRadius.circular(12),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: CupertinoColors.systemGrey
+                                            .withOpacity(0.2),
+                                        blurRadius: 1,
+                                        offset: Offset(0, 1),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Icon(
+                                    CupertinoIcons.personalhotspot,
+                                    size: 20,
+                                    color: CupertinoColors.white,
+                                  ),
+                                ),
+                                SizedBox(height: 20),
+                              ],
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                            ),
+
+                            SizedBox(width: 15),
+
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'Personal Hotspot',
+                                        style: TextStyle(
+                                          color: CupertinoColors.inactiveGray
+                                              .withOpacity(0.5),
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            'Off',
+                                            style: TextStyle(
+                                              color: CupertinoColors
+                                                  .inactiveGray
+                                                  .withOpacity(0.5),
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 18,
+                                            ),
+                                          ),
+                                          SizedBox(width: 5),
+
+                                          Icon(
+                                            CupertinoIcons.chevron_right,
+                                            color: CupertinoColors.inactiveGray,
+                                            size: 18,
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 10),
+                                  Divider(),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      // BUTTON END
+
+                      // BUTTON Start
+                      CupertinoButton(
+                        padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                        child: Row(
+                          children: [
+                            Column(
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black45,
+                                    borderRadius: BorderRadius.circular(12),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: CupertinoColors.systemGrey
+                                            .withOpacity(0.2),
+                                        blurRadius: 2,
+                                        offset: Offset(0, 1),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Icon(
+                                    CupertinoIcons.battery_full,
+                                    size: 20,
+                                    color: CupertinoColors.white,
+                                  ),
+                                ),
+                                SizedBox(height: 20),
+                              ],
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                            ),
+
+                            SizedBox(width: 15),
+
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'Battery',
+                                        style: TextStyle(
+                                          color: CupertinoColors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            CupertinoIcons.chevron_right,
+                                            color: CupertinoColors.inactiveGray,
+                                            size: 18,
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 15),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        onPressed: () {},
+                      ),
+
+                      // BUTTON END
+                    ],
+                  ),
+                ),
+
                 //END CONTAINER --------------------------------
               ],
             ),
