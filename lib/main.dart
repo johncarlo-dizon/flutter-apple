@@ -59,11 +59,11 @@ class _MyAppState extends State<MyApp> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: CupertinoColors.systemGrey.withOpacity(0.1),
-                          image: DecorationImage(
+                          image:  MediaQuery.of(context).size.width > 320 ? DecorationImage(
                             image: AssetImage('images/aaron.jpg'),
                             alignment: Alignment.centerRight,
                             fit: BoxFit.contain,
-                          ),
+                          ):null,
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -96,11 +96,12 @@ class _MyAppState extends State<MyApp> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: CupertinoColors.systemGrey.withOpacity(0.1),
-                          image: DecorationImage(
+                          image:  MediaQuery.of(context).size.width > 320 ? DecorationImage(
                             image: AssetImage('images/joseph.jpg'),
                             alignment: Alignment.centerRight,
                             fit: BoxFit.contain,
-                          ),
+                          ):null,
+
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -133,11 +134,11 @@ class _MyAppState extends State<MyApp> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: CupertinoColors.systemGrey.withOpacity(0.1),
-                          image: DecorationImage(
+                          image:  MediaQuery.of(context).size.width > 320 ? DecorationImage(
                             image: AssetImage('images/joel.jpg'),
                             alignment: Alignment.centerRight,
                             fit: BoxFit.contain,
-                          ),
+                          ):null,
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -169,11 +170,11 @@ class _MyAppState extends State<MyApp> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: CupertinoColors.systemGrey.withOpacity(0.1),
-                          image: DecorationImage(
+                          image:  MediaQuery.of(context).size.width > 320 ? DecorationImage(
                             image: AssetImage('images/jc.jpg'),
                             alignment: Alignment.centerRight,
                             fit: BoxFit.contain,
-                          ),
+                          ):null,
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -205,11 +206,11 @@ class _MyAppState extends State<MyApp> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: CupertinoColors.systemGrey.withOpacity(0.1),
-                          image: DecorationImage(
+                          image:  MediaQuery.of(context).size.width > 320 ? DecorationImage(
                             image: AssetImage('images/jomel.jpg'),
                             alignment: Alignment.centerRight,
                             fit: BoxFit.contain,
-                          ),
+                          ):null,
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -315,37 +316,26 @@ class _MyAppState extends State<MyApp> {
                               width: 80,
                             ),
                           ),
-
-                          Expanded(
+                          Expanded(  // Ensure the text container takes the remaining space
                             child: Padding(
                               padding: const EdgeInsets.fromLTRB(7, 15, 0, 0),
                               child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,  // Align text to the left
                                 children: [
                                   Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'John Carlo Dizon',
-                                            style: TextStyle(
-                                              fontSize: 23,
-                                              fontWeight: FontWeight.w500,
-                                              color: CupertinoColors.white,
-                                            ),
+                                      // Wrapping the text in an Expanded widget to prevent overflow
+                                      Expanded(
+                                        child: Text(
+                                          'John Carlo Dizon',
+                                          style: TextStyle(
+                                            fontSize: 23,
+                                            fontWeight: FontWeight.w500,
+                                            color: CupertinoColors.white,
                                           ),
-                                          Text(
-                                            'Apple Account, iCloud, and more',
-                                            style: TextStyle(
-                                              fontSize: 15,
-                                              color:
-                                                  CupertinoColors.inactiveGray,
-                                            ),
-                                          ),
-                                        ],
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
                                       ),
                                       Icon(
                                         CupertinoIcons.chevron_right,
@@ -354,6 +344,17 @@ class _MyAppState extends State<MyApp> {
                                       ),
                                     ],
                                   ),
+
+                                  // Wrapping this text inside an Expanded widget to allow overflow handling
+                                  Text(
+                                    'Apple Account, iCloud, and more',
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      color: CupertinoColors.inactiveGray,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+
                                   SizedBox(height: 15),
                                   Divider(),
                                 ],
@@ -369,12 +370,15 @@ class _MyAppState extends State<MyApp> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text(
-                            "Your iPhone can't be backed up",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 18,
-                              color: CupertinoColors.white,
+                          Expanded(
+                            child: Text(
+                              "Your iPhone can't be backed up",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 18,
+                                color: CupertinoColors.white,
+                              ),
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
 
@@ -433,12 +437,15 @@ class _MyAppState extends State<MyApp> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        'Software Update Available',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18,
-                          color: CupertinoColors.white,
+                      Expanded(
+                        child: Text(
+                          'Software Update Available',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 18,
+                            color: CupertinoColors.white,
+                          ),
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
 
@@ -499,7 +506,9 @@ class _MyAppState extends State<MyApp> {
                         padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                         child: Row(
                           children: [
-                            Column(
+
+
+                            MediaQuery.of(context).size.width > 320 ?  Column(
                               children: [
                                 Container(
                                   padding: EdgeInsets.all(10),
@@ -524,7 +533,7 @@ class _MyAppState extends State<MyApp> {
                                 SizedBox(height: 20),
                               ],
                               crossAxisAlignment: CrossAxisAlignment.start,
-                            ),
+                            ): SizedBox.shrink(),
 
                             SizedBox(width: 15),
 
@@ -533,16 +542,19 @@ class _MyAppState extends State<MyApp> {
                                 children: [
                                   Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                    CrossAxisAlignment.center,
                                     children: [
-                                      Text(
-                                        'Airplane Mode',
-                                        style: TextStyle(
-                                          color: CupertinoColors.white,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w500,
+                                      Expanded(
+                                        child: Text(
+                                          'Airplane Mode',
+                                          style: TextStyle(
+                                            color: CupertinoColors.white,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                          overflow: TextOverflow.ellipsis,
                                         ),
                                       ),
                                       Row(
@@ -574,7 +586,9 @@ class _MyAppState extends State<MyApp> {
                         padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                         child: Row(
                           children: [
-                            Column(
+
+
+                            MediaQuery.of(context).size.width > 320 ?  Column(
                               children: [
                                 Container(
                                   padding: EdgeInsets.all(10),
@@ -599,7 +613,7 @@ class _MyAppState extends State<MyApp> {
                                 SizedBox(height: 20),
                               ],
                               crossAxisAlignment: CrossAxisAlignment.start,
-                            ),
+                            ) : SizedBox.shrink(),
 
                             SizedBox(width: 15),
 
@@ -608,27 +622,31 @@ class _MyAppState extends State<MyApp> {
                                 children: [
                                   Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                    CrossAxisAlignment.center,
                                     children: [
-                                      Text(
-                                        'Wi-Fi',
-                                        style: TextStyle(
-                                          color: CupertinoColors.white,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold,
+                                      Expanded(
+                                        child: Text(
+                                          'Wi-Fi',
+                                          style: TextStyle(
+                                            color: CupertinoColors.white,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                          overflow: TextOverflow.ellipsis,
+
                                         ),
                                       ),
                                       Row(
                                         children: [
                                           Text(
                                             wifiStatus
-                                                ? 'Not Connected'
+                                                ?         MediaQuery.of(context).size.width > 320 ?  'Not Connected' : 'NC'
                                                 : 'Off',
                                             style: TextStyle(
                                               color:
-                                                  CupertinoColors.inactiveGray,
+                                              CupertinoColors.inactiveGray,
                                               fontWeight: FontWeight.w500,
                                               fontSize: 18,
                                             ),
@@ -666,7 +684,9 @@ class _MyAppState extends State<MyApp> {
                         padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                         child: Row(
                           children: [
-                            Column(
+
+
+                            MediaQuery.of(context).size.width > 320 ?   Column(
                               children: [
                                 Container(
                                   padding: EdgeInsets.all(10),
@@ -691,7 +711,7 @@ class _MyAppState extends State<MyApp> {
                                 SizedBox(height: 20),
                               ],
                               crossAxisAlignment: CrossAxisAlignment.start,
-                            ),
+                            ): SizedBox.shrink(),
 
                             SizedBox(width: 15),
 
@@ -700,16 +720,19 @@ class _MyAppState extends State<MyApp> {
                                 children: [
                                   Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                    CrossAxisAlignment.center,
                                     children: [
-                                      Text(
-                                        'Bluetooth',
-                                        style: TextStyle(
-                                          color: CupertinoColors.white,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w500,
+                                      Expanded(
+                                        child: Text(
+                                          'Bluetooth',
+                                          style: TextStyle(
+                                            color: CupertinoColors.white,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                          overflow: TextOverflow.ellipsis,
                                         ),
                                       ),
                                       Row(
@@ -718,7 +741,7 @@ class _MyAppState extends State<MyApp> {
                                             blueStatus ? 'On' : 'Off',
                                             style: TextStyle(
                                               color:
-                                                  CupertinoColors.inactiveGray,
+                                              CupertinoColors.inactiveGray,
                                               fontWeight: FontWeight.w400,
                                               fontSize: 18,
                                             ),
@@ -758,7 +781,9 @@ class _MyAppState extends State<MyApp> {
                         padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                         child: Row(
                           children: [
-                            Column(
+
+
+                            MediaQuery.of(context).size.width > 320 ?  Column(
                               children: [
                                 Container(
                                   padding: EdgeInsets.all(10),
@@ -784,7 +809,7 @@ class _MyAppState extends State<MyApp> {
                                 SizedBox(height: 20),
                               ],
                               crossAxisAlignment: CrossAxisAlignment.start,
-                            ),
+                            ): SizedBox.shrink(),
 
                             SizedBox(width: 15),
 
@@ -793,9 +818,9 @@ class _MyAppState extends State<MyApp> {
                                 children: [
                                   Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                    CrossAxisAlignment.center,
                                     children: [
                                       Text(
                                         'Cellular',
@@ -811,7 +836,7 @@ class _MyAppState extends State<MyApp> {
                                             'Off',
                                             style: TextStyle(
                                               color:
-                                                  CupertinoColors.inactiveGray,
+                                              CupertinoColors.inactiveGray,
                                               fontWeight: FontWeight.w400,
                                               fontSize: 18,
                                             ),
@@ -845,7 +870,9 @@ class _MyAppState extends State<MyApp> {
                         padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                         child: Row(
                           children: [
-                            Column(
+
+
+                            MediaQuery.of(context).size.width > 320 ?     Column(
                               children: [
                                 Container(
                                   padding: EdgeInsets.all(10),
@@ -870,7 +897,7 @@ class _MyAppState extends State<MyApp> {
                                 SizedBox(height: 20),
                               ],
                               crossAxisAlignment: CrossAxisAlignment.start,
-                            ),
+                            ):SizedBox.shrink(),
 
                             SizedBox(width: 15),
 
@@ -879,17 +906,20 @@ class _MyAppState extends State<MyApp> {
                                 children: [
                                   Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                    CrossAxisAlignment.center,
                                     children: [
-                                      Text(
-                                        'Personal Hotspot',
-                                        style: TextStyle(
-                                          color: CupertinoColors.inactiveGray
-                                              .withOpacity(0.5),
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w500,
+                                      Expanded(
+                                        child: Text(
+                                          'Personal Hotspot',
+                                          style: TextStyle(
+                                            color: CupertinoColors.inactiveGray
+                                                .withOpacity(0.5),
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                          overflow: TextOverflow.ellipsis,
                                         ),
                                       ),
                                       Row(
@@ -931,7 +961,9 @@ class _MyAppState extends State<MyApp> {
                         padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                         child: Row(
                           children: [
-                            Column(
+
+
+                            MediaQuery.of(context).size.width > 320 ?   Column(
                               children: [
                                 Container(
                                   padding: EdgeInsets.all(10),
@@ -956,7 +988,7 @@ class _MyAppState extends State<MyApp> {
                                 SizedBox(height: 20),
                               ],
                               crossAxisAlignment: CrossAxisAlignment.start,
-                            ),
+                            ):SizedBox.shrink(),
 
                             SizedBox(width: 15),
 
@@ -965,9 +997,9 @@ class _MyAppState extends State<MyApp> {
                                 children: [
                                   Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                    CrossAxisAlignment.center,
                                     children: [
                                       Text(
                                         'Battery',

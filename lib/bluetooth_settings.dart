@@ -207,19 +207,22 @@ class _BluetoothAppState extends State<BluetoothApp> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(
-                                  20,
-                                  10,
-                                  10,
-                                  10,
-                                ),
-                                child: Text(
-                                  "Allow New Connections",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 18,
-                                    color: Colors.blue,
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsets.fromLTRB(
+                                    20,
+                                    10,
+                                    10,
+                                    10,
+                                  ),
+                                  child: Text(
+                                    "Allow New Connections",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 18,
+                                      color: Colors.blue,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
                                   ),
                                 ),
                               ),
@@ -286,22 +289,25 @@ class _BluetoothAppState extends State<BluetoothApp> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(
-                                  20,
-                                  10,
-                                  10,
-                                  10,
-                                ),
-                                child: Text(
-                                  "BEATS PROBO",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 18,
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsets.fromLTRB(
+                                    20,
+                                    10,
+                                    10,
+                                    10,
+                                  ),
+                                  child: Text(
+                                    "BEATS PROBO",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 18,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
                                   ),
                                 ),
                               ),
-                              Padding(
+                              MediaQuery.of(context).size.width > 320 ?  Padding(
                                 padding: const EdgeInsets.fromLTRB(
                                   10,
                                   10,
@@ -318,7 +324,31 @@ class _BluetoothAppState extends State<BluetoothApp> {
                                     Icon(CupertinoIcons.exclamationmark_circle),
                                   ],
                                 ),
+                              ):  Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                  10,
+                                  10,
+                                  10,
+                                  10,
+                                ),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      'NC',
+                                      style: TextStyle(fontSize: 18),
+                                    ),
+                                    SizedBox(width: 5),
+                                    Icon(CupertinoIcons.exclamationmark_circle),
+                                  ],
+                                ),
                               ),
+
+
+
+
+
+
+
                             ],
                           ),
                           Padding(
@@ -329,22 +359,29 @@ class _BluetoothAppState extends State<BluetoothApp> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(
-                                  20,
-                                  10,
-                                  10,
-                                  10,
-                                ),
-                                child: Text(
-                                  "AirPods",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 18,
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsets.fromLTRB(
+                                    20,
+                                    10,
+                                    10,
+                                    10,
+                                  ),
+                                  child: Text(
+                                    "AirPods",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 18,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
                                   ),
                                 ),
                               ),
-                              Padding(
+
+
+
+
+                              MediaQuery.of(context).size.width > 320 ?   Padding(
                                 padding: const EdgeInsets.fromLTRB(
                                   10,
                                   10,
@@ -361,7 +398,28 @@ class _BluetoothAppState extends State<BluetoothApp> {
                                     Icon(CupertinoIcons.exclamationmark_circle),
                                   ],
                                 ),
+                              ) :  Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                  10,
+                                  10,
+                                  10,
+                                  10,
+                                ),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      'NC',
+                                      style: TextStyle(fontSize: 18),
+                                    ),
+                                    SizedBox(width: 5),
+                                    Icon(CupertinoIcons.exclamationmark_circle),
+                                  ],
+                                ),
                               ),
+
+
+
+
                             ],
                           ),
                           Padding(
@@ -372,22 +430,28 @@ class _BluetoothAppState extends State<BluetoothApp> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(
-                                  20,
-                                  10,
-                                  10,
-                                  10,
-                                ),
-                                child: Text(
-                                  "inkax-T02",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 18,
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsets.fromLTRB(
+                                    20,
+                                    10,
+                                    10,
+                                    10,
+                                  ),
+                                  child: Text(
+                                    "inkax-T02",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 18,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
                                   ),
                                 ),
                               ),
-                              Padding(
+
+
+
+                              MediaQuery.of(context).size.width > 320 ?   Padding(
                                 padding: const EdgeInsets.fromLTRB(
                                   10,
                                   10,
@@ -404,7 +468,27 @@ class _BluetoothAppState extends State<BluetoothApp> {
                                     Icon(CupertinoIcons.exclamationmark_circle),
                                   ],
                                 ),
+                              ): Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                  10,
+                                  10,
+                                  10,
+                                  10,
+                                ),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      'NC',
+                                      style: TextStyle(fontSize: 18),
+                                    ),
+                                    SizedBox(width: 5),
+                                    Icon(CupertinoIcons.exclamationmark_circle),
+                                  ],
+                                ),
                               ),
+
+
+
                             ],
                           ),
                           Padding(
